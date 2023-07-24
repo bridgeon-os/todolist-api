@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const {PORT, DB_URL} = process.env
 
@@ -9,6 +10,7 @@ mongoose.connect(DB_URL)
     .catch((error) => {console.log('DB Failed to Connect ', error.message)})
 
 app.use(express.json())
+app.use(cors())
 
 const Admin = require('./routes/admin')
 app.use('/', Admin)
