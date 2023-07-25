@@ -22,5 +22,5 @@ const Todo = require('./routes/todo')
 app.use('/', Todo)
 
 app.listen(PORT, () => {
-    console.log('Listening to Port 4000')
+    console.log('Listening to Port ' + PORT)
 })

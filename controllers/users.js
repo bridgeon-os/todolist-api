@@ -49,7 +49,7 @@ module.exports = {
             const Collection = await mongoose.connection.db.collection(apiKey)
 
             const user = await Collection.findOne({ username })
-           
+            
             if (!user) {
                 throw new Error('No UserName Found')
             }
