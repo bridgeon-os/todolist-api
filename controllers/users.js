@@ -43,7 +43,7 @@ module.exports = {
 
     login: async (req, res) => {
         try {
-
+            console.log(req.body)
             const { username, password, apiKey } = req.body
 
             const Collection = await mongoose.connection.db.collection(apiKey)
