@@ -4,10 +4,10 @@ const todos = require("../controllers/todos");
 const {tokenVerify} = require("../middleware/tokenVerify");
 
 router.route('/users/todo')
-.post(tokenVerify, todos.create)
-.get(tokenVerify, todos.readAll)
-.put(tokenVerify, todos.update)
-.delete(tokenVerify, todos.delete)
+.post(todos.create)
+.get(todos.readAll)
+.put(todos.update)
+.delete(todos.delete)
 
 // router.route('/users/login')
 // .post(users.login)
