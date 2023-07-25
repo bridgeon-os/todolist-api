@@ -10,6 +10,7 @@ mongoose.connect(DB_URL)
     .catch((error) => {console.log('DB Failed to Connect ', error.message)})
 
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
 const Admin = require('./routes/admin')
