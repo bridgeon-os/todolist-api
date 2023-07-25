@@ -13,14 +13,15 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
+const Todo = require('./routes/todo')
+app.use('/', Todo)
+
 const Admin = require('./routes/admin')
 app.use('/', Admin)
 
 const User = require('./routes/users')
 app.use('/', User)
 
-const Todo = require('./routes/todo')
-app.use('/', Todo)
 
 app.listen(PORT, () => {
     console.log('Listening to Port ' + PORT)
