@@ -32,9 +32,12 @@ module.exports = {
     readAll: async (req, res) => {
         try {
             const { apiKey, username } = req.body
+            
+            console.log(req.body)
+            
             const Collection = await mongoose.connection.db.collection(apiKey)
             
-            console.log(apiKey, username, Collection)
+            
             const user = await Collection.findOne({ username })
 
             if (!user) {
