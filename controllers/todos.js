@@ -101,6 +101,10 @@ module.exports = {
 
             const deleteTodo = user.todolist.filter(todo => todo.id !== todoId)
 
+            if(deleteTodo.length === user.todolist.length){
+                throw new Error('No Todo Found')
+            }
+
             await Collection.updateOne({ username }, { $set: { todolist: deleteTodo } })
 
             res.status(200).json({ status: 'success', message: 'Todo Deleted' })
